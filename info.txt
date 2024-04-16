@@ -1,0 +1,1 @@
+generate a Solid key[only works with gitBash] = openssl rand -base64 32
