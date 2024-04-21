@@ -33,7 +33,7 @@ const Home = () => {
     }
   }, [setSelectedConversation, windowWidth]);
   return (
-    <div className="relative m-auto min-h-[300px] flex h-[97%] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+    <div className="relative m-auto min-h-[300px] flex h-[700px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
       <div className="hidden md:block">
         <Sidebar />
       </div>
