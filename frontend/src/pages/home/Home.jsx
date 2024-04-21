@@ -6,9 +6,12 @@ import { TiMessages } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import useConversation from "../../zustand/useConversation";
 import { useEffect, useState } from "react";
+import useLogout from "../../../hooks/useLogout";
+import { BiLogOut } from "react-icons/bi";
 
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { loading, logout } = useLogout();
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,7 +33,7 @@ const Home = () => {
     }
   }, [setSelectedConversation, windowWidth]);
   return (
-    <div className="relative flex h-screen md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+    <div className="relative flex h-full md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
       <div className="hidden md:block">
         <Sidebar />
       </div>
@@ -54,6 +57,19 @@ const Home = () => {
             size={30}
             className="font-extrabold text-slate-950 hover:text-slate-600"
           />
+        </div>
+        <div>
+          {loading ? (
+            <span className="loading loading-spinner" />
+          ) : (
+            <div className="flex  justify-between mt-2 py-1 relative">
+              <BiLogOut
+                size={30}
+                className="font-extrabold text-slate-950 hover:text-slate-600"
+                onClick={logout}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
