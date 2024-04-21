@@ -13,7 +13,7 @@ const Login = () => {
     await signin(formData);
   };
   return (
-    <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
+    <div className="flex pt-20 md:p-0  px-4  flex-col items-center justify-center md:min-w-96 m-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Login <span className="text-blue-500">Connect</span>

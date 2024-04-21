@@ -32,7 +32,7 @@ const SearchInput = () => {
         placeholder="Search.."
         className="input input-bordered rounded-full"
       />
-      <button className="btn btn-circle bg-sky-500 text-white">
+      <button className="btn btn-circle bg-teal-500 text-white">
         <IoSearchSharp className="w-[24px] h-6 outline-none" />
       </button>
     </form>

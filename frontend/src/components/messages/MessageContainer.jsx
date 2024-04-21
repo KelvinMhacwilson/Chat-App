@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages";
-import { TiMessages } from "react-icons/ti";
+import { TiMediaRecordOutline, TiMessages } from "react-icons/ti";
 import { useAuthContext } from "../../context/AuthContext";
+import { IoMedkitSharp } from "react-icons/io5";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
@@ -11,16 +12,31 @@ const MessageContainer = () => {
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]);
   return (
-    <div className="md:min-w-[450px] flex flex-col">
+    <div className="md:min-w-[400px] lg:min-w-[600px] xl:min-w-[900px] 2xl:min-w-[1000px]  w-full mb-9 md:mb-0  flex flex-col">
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
         <>
-          <div className="bg-slate-400 px-4 py-2 mb-2">
-            <span className="label-text text-gray-600 mr-1">To:</span>
-            <span className="text-gray-700 font-bold capitalize">
-              {selectedConversation.fullName}
-            </span>
+          <div className="bg-teal-400 opacity-30 text-center px-4 py-2 md:rounded-r mb-2 flex justify-between items-center">
+            <div className="flex gap-1 items-center">
+              <TiMediaRecordOutline size={20} />
+              <div className="flex gap-[2px] items-center">
+                <img
+                  className="w-[20px] h-[20px] "
+                  src={selectedConversation?.profilePic}
+                  alt="U"
+                />
+                <span className="text-gray-600 font-bold capitalize">
+                  {selectedConversation?.fullName}
+                </span>
+              </div>
+            </div>
+            <div>
+              <IoMedkitSharp
+                size={20}
+                className="text-slate-800 font-extrabold"
+              />
+            </div>
           </div>
 
           <Messages />
