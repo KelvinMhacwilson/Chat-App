@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages";
-import { TiMediaRecordOutline, TiMessages } from "react-icons/ti";
 import { useAuthContext } from "../../context/AuthContext";
-import { IoMedkitSharp } from "react-icons/io5";
+import { CiMenuKebab } from "react-icons/ci";
+import { IoMdArrowBack } from "react-icons/io";
+import { TiMessages } from "react-icons/ti";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
@@ -17,22 +18,25 @@ const MessageContainer = () => {
         <NoChatSelected />
       ) : (
         <>
-          <div className="bg-teal-400 opacity-30 text-center px-4 py-2 md:rounded-r mb-2 flex justify-between items-center">
+          <div className="bg-teal-400 opacity-90 text-center px-4 py-2 md:rounded-r mb-2 flex justify-between items-center">
             <div className="flex gap-1 items-center">
-              <TiMediaRecordOutline size={20} />
-              <div className="flex gap-[2px] items-center">
+              <IoMdArrowBack
+                className="font-extrabold text-slate-950"
+                size={20}
+              />
+              <div className="flex items-center">
                 <img
                   className="w-[20px] h-[20px] "
                   src={selectedConversation?.profilePic}
                   alt="U"
                 />
-                <span className="text-gray-600 font-bold capitalize">
+                <span className="text-gray-600 ml-2 font-bold capitalize">
                   {selectedConversation?.fullName}
                 </span>
               </div>
             </div>
             <div>
-              <IoMedkitSharp
+              <CiMenuKebab
                 size={20}
                 className="text-slate-800 font-extrabold"
               />
