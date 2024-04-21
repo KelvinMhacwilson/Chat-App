@@ -36,21 +36,18 @@ const MessageContainer = () => {
         <NoChatSelected />
       ) : (
         <>
-          <div className="bg-teal-500 md:hidden fixed top-0 left-0 right-0   text-center px-4 py-2 md:rounded-r flex justify-between items-center z-50">
+          <div className="bg-teal-500 md:hidden fixed top-0 left-0 right-0 h-[60px]  text-center px-4 py-2 md:rounded-r flex justify-between items-center z-50">
             <div className="flex gap-1 items-center ">
               <div onClick={() => navigate("/sidebar")}>
-                <IoMdArrowBack
-                  className="font-extrabold text-slate-950 md:hidden"
-                  size={20}
-                />
+                <IoMdArrowBack className="text-gray-700 md:hidden" size={30} />
               </div>
               <div className="flex items-center">
                 <img
-                  className="w-[20px] h-[20px] "
+                  className="w-[30px] h-[30px] "
                   src={selectedConversation?.profilePic}
                   alt="U"
                 />
-                <span className="text-gray-600 ml-2 font-bold capitalize">
+                <span className="text-gray-600 ml-2 text-xl font-bold capitalize">
                   {selectedConversation?.fullName}
                 </span>
               </div>

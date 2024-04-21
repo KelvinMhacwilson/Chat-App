@@ -15,7 +15,7 @@ function Messages() {
     }, 100);
   }, [messages]);
   return (
-    <div className="px-4 mt-12 mb-16 md:my-0 flex-1 overflow-auto">
+    <div className="px-4 mt-20 mb-16 md:my-0 flex-1 overflow-auto">
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => (

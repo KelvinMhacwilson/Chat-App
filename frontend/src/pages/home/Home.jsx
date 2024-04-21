@@ -36,7 +36,7 @@ const Home = () => {
       </div>
       <MessageContainer />
 
-      <div className="absolute bottom-0  left-0 right-0 bg-teal-200 opacity-30 h-12 md:hidden flex justify-evenly items-center">
+      <div className="fixed  bottom-0 right-0 left-0 bg-teal-200 opacity-30 h-12 md:hidden flex justify-evenly items-center">
         <div onClick={() => navigate("/sidebar")}>
           <TiMessages
             size={30}
