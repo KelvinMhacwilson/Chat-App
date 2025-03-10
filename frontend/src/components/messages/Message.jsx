@@ -15,7 +15,7 @@ function Message({ message }) {
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
         <div className="rounded-full w-10">
-          <img src={profilePic} alt="Me" />
+          <img src={profilePic} alt={fromMe ? "Me": "Sender"} />
         </div>
       </div>
 

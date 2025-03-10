@@ -18,7 +18,7 @@ const Conversation = ({ conversation, lastIndex, emoji }) => {
       >
         <div className={`avatar ${isOnline && "online"}`}>
           <div className="w-12 rounded-full">
-            <img src={conversation.profilePic} alt="Me" />
+            <img src={conversation.profilePic} alt={conversation.userName} />
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const Conversation = ({ conversation, lastIndex, emoji }) => {
       >
         <div className={`avatar ${isOnline && "online"}`}>
           <div className="w-12 rounded-full">
-            <img src={conversation.profilePic} alt="Me" />
+            <img src={conversation.profilePic} alt={conversation.userName} />
           </div>
         </div>
 
