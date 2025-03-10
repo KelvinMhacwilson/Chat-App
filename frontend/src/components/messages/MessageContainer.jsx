@@ -7,6 +7,10 @@ import { CiMenuKebab } from "react-icons/ci";
 import { IoMdArrowBack } from "react-icons/io";
 import { TiMessages } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
+import { IoSearchSharp } from "react-icons/io5";
+import useLogout from "../../../hooks/useLogout";
+import { BiLogOut } from "react-icons/bi";
 
 const MessageContainer = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -90,12 +94,49 @@ const MessageContainer = () => {
 
 export const NoChatSelected = () => {
   const { authUser } = useAuthContext();
+  const navigate = useNavigate();
+  const { loading, logout } = useLogout();
+
   return (
     <div className="flex  w-full h-full justify-center items-center">
-      <div className="px-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
-        <p>Welcome 👋 {authUser.fullName}</p>
+      <div className="p-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
+        <p>Hey!! {authUser.fullName}</p>
         <p>Select a chat to start messaging</p>
         <TiMessages className="text-3xl md:text-6xl text-center" />
+      </div>
+
+      <div className="fixed  bottom-0 right-0 left-0 bg-teal-200 opacity-30 h-12 md:hidden flex justify-evenly items-center">
+        <div onClick={() => navigate("/sidebar")}>
+          <TiMessages
+            size={30}
+            className="font-extrabold text-slate-950 hover:text-slate-600"
+          />
+        </div>
+        <div>
+          <IoSearchSharp
+            size={30}
+            className="font-extrabold text-slate-950 hover:text-slate-600"
+          />
+        </div>
+        <div>
+          <CgProfile
+            size={30}
+            className="font-extrabold text-slate-950 hover:text-slate-600"
+          />
+        </div>
+        <div>
+          {loading ? (
+            <span className="loading loading-spinner" />
+          ) : (
+            <div className="flex  justify-between mt-2 py-1 relative">
+              <BiLogOut
+                size={30}
+                className="font-extrabold text-slate-950 hover:text-slate-600"
+                onClick={logout}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
