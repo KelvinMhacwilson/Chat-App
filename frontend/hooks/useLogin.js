@@ -16,7 +16,7 @@ const useLogin = () => {
         .post("/api/auth/login", { userName, password })
         .then((res) => {
           const { data } = res;
-          localStorage.setItem("chat-user", JSON.stringify(data));
+          localStorage.setItem("chat-app", JSON.stringify(data));
           setAuthUser(data);
         })
         .catch((error) => toast.error(error.response.data));
