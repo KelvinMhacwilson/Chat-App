@@ -20,7 +20,7 @@ const LogoutButton = () => {
           {isHovered && (
             <p className="chat-bubble text-blue-500  absolute top-[-50px] right-[-50px] cursor-pointer">
               {"@"}
-              {authUser.fullName}
+              {authUser?.fullName}
             </p>
           )}
           <div
@@ -28,7 +28,7 @@ const LogoutButton = () => {
             onMouseLeave={() => setIsHovered(false)}
             className="w-6 h-6 avatar online"
           >
-            <img src={authUser.profilePic} alt={authUser.name} />
+            <img src={authUser?.profilePic} alt={authUser?.name} />
           </div>
         </div>
       )}

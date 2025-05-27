@@ -13,7 +13,7 @@ export const SocketContextProvider = ({ children }) => {
     if (authUser) {
       const socket = io("https://mhac-connect.onrender.com", {
         query: {
-          userId: authUser._id,
+          userId: authUser?._id,
         },
       });
 

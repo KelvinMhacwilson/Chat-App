@@ -90,7 +90,7 @@ export const NoChatSelected = () => {
   return (
     <div className="md:min-w-[400px] lg:min-w-[600px] xl:min-w-[900px] 2xl:min-w-[1000px]  w-full mb-9 md:mb-0  flex flex-col h-full justify-center items-center">
       <div className="p-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
-        <p>Hey!! {authUser.fullName}</p>
+        <p>Hey!! {authUser?.fullName}</p>
         <p>Select a chat to start messaging</p>
         <TiMessages className="text-3xl md:text-6xl text-center" />
       </div>

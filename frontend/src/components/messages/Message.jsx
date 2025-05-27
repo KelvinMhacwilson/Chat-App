@@ -5,10 +5,10 @@ import useConversation from "../../zustand/useConversation";
 function Message({ message }) {
   const { authUser } = useAuthContext();
   const { selectedConversation } = useConversation();
-  const fromMe = message.senderId === authUser._id;
+  const fromMe = message.senderId === authUser?._id;
   const chatClassName = fromMe ? "chat-end" : "chat-start";
   const profilePic = fromMe
-    ? authUser.profilePic
+    ? authUser?.profilePic
     : selectedConversation?.profilePic;
   const shakeClass = message.shouldShake && "shake";
   return (
