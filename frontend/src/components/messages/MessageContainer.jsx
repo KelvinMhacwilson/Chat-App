@@ -36,58 +36,48 @@ const MessageContainer = () => {
   }, [setSelectedConversation, windowWidth, navigate]);
   return (
     <div className="md:min-w-[400px] lg:min-w-[600px] xl:min-w-[900px] 2xl:min-w-[1000px]  w-full mb-9 md:mb-0  flex flex-col">
-      {!selectedConversation ? (
-        <NoChatSelected />
-      ) : (
-        <>
-          <div className="bg-teal-500 md:hidden fixed top-0 left-0 right-0 h-[60px]  text-center px-4 py-2 md:rounded-r flex justify-between items-center z-50">
-            <div className="flex gap-1 items-center ">
-              <div onClick={() => navigate("/sidebar")}>
-                <IoMdArrowBack className="text-gray-700 md:hidden" size={30} />
-              </div>
-              <div className="flex items-center">
-                <img
-                  className="w-[30px] h-[30px] "
-                  src={selectedConversation?.profilePic}
-                  alt="U"
-                />
-                <span className="text-gray-600 ml-2 text-xl font-bold capitalize">
-                  {selectedConversation?.fullName}
-                </span>
-              </div>
+      <>
+        <div className="bg-teal-500 md:hidden fixed top-0 left-0 right-0 h-[60px]  text-center px-4 py-2 md:rounded-r flex justify-between items-center z-50">
+          <div className="flex gap-1 items-center ">
+            <div onClick={() => navigate("/sidebar")}>
+              <IoMdArrowBack className="text-gray-700 md:hidden" size={30} />
             </div>
-            <div>
-              <CiMenuKebab
-                size={20}
-                className="text-slate-800 font-extrabold"
+            <div className="flex items-center">
+              <img
+                className="w-[30px] h-[30px] "
+                src={selectedConversation?.profilePic}
+                alt="U"
               />
+              <span className="text-gray-600 ml-2 text-xl font-bold capitalize">
+                {selectedConversation?.fullName}
+              </span>
             </div>
           </div>
+          <div>
+            <CiMenuKebab size={20} className="text-slate-800 font-extrabold" />
+          </div>
+        </div>
 
-          <div className="hidden bg-teal-400  opacity-90 text-center px-4 py-2 md:rounded-r mb-2 md:flex justify-between items-center">
-            <div className="flex gap-1 items-center ">
-              <div className="flex items-center">
-                <img
-                  className="w-[20px] h-[20px] "
-                  src={selectedConversation?.profilePic}
-                  alt="U"
-                />
-                <span className="text-gray-600 ml-2 font-bold capitalize">
-                  {selectedConversation?.fullName}
-                </span>
-              </div>
-            </div>
-            <div>
-              <CiMenuKebab
-                size={20}
-                className="text-slate-800 font-extrabold"
+        <div className="hidden bg-teal-400  opacity-90 text-center px-4 py-2 md:rounded-r mb-2 md:flex justify-between items-center">
+          <div className="flex gap-1 items-center ">
+            <div className="flex items-center">
+              <img
+                className="w-[20px] h-[20px] "
+                src={selectedConversation?.profilePic}
+                alt="U"
               />
+              <span className="text-gray-600 ml-2 font-bold capitalize">
+                {selectedConversation?.fullName}
+              </span>
             </div>
           </div>
-          <Messages />
-          <MessageInput />
-        </>
-      )}
+          <div>
+            <CiMenuKebab size={20} className="text-slate-800 font-extrabold" />
+          </div>
+        </div>
+        <Messages />
+        <MessageInput />
+      </>
     </div>
   );
 };
@@ -98,7 +88,7 @@ export const NoChatSelected = () => {
   const { loading, logout } = useLogout();
 
   return (
-    <div className="flex  w-full h-full justify-center items-center">
+    <div className="md:min-w-[400px] lg:min-w-[600px] xl:min-w-[900px] 2xl:min-w-[1000px]  w-full mb-9 md:mb-0  flex flex-col h-full justify-center items-center">
       <div className="p-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
         <p>Hey!! {authUser.fullName}</p>
         <p>Select a chat to start messaging</p>

@@ -1,4 +1,6 @@
-import MessageContainer from "../../components/messages/MessageContainer";
+import MessageContainer, {
+  NoChatSelected,
+} from "../../components/messages/MessageContainer";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { IoSearchSharp } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
@@ -26,7 +28,7 @@ const Home = () => {
     };
   }, []);
   const navigate = useNavigate();
-  const { setSelectedConversation } = useConversation();
+  const { setSelectedConversation, selectedConversation } = useConversation();
   useEffect(() => {
     if (windowWidth < 767) {
       setSelectedConversation(null);
@@ -37,7 +39,7 @@ const Home = () => {
       <div className="hidden md:block">
         <Sidebar />
       </div>
-      <MessageContainer />
+      {selectedConversation ? <MessageContainer /> : <NoChatSelected />}
 
       <div className="fixed  bottom-0 right-0 left-0 bg-teal-200 opacity-30 h-12 md:hidden flex justify-evenly items-center">
         <div onClick={() => navigate("/sidebar")}>

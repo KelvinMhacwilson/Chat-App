@@ -29,10 +29,12 @@ const Sidebar = () => {
     }
   }, [setSelectedConversation, windowWidth, navigate]);
   return (
-    <div className="border-r border-slate-500 p-4 flex flex-col">
+    <div className="border-r border-slate-500 py-4 pl-4 pr-2 flex flex-col">
       <SearchInput />
       <div className="divider px-3" />
-      <Conversations />
+      <div className="max-h-[380px] flex overflow-hidden">
+        <Conversations />
+      </div>
       <div className="hidden md:block">
         <LogoutButton />
       </div>
