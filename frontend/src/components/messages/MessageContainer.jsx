@@ -7,8 +7,6 @@ import { CiMenuKebab } from "react-icons/ci";
 import { IoMdArrowBack } from "react-icons/io";
 import { TiMessages } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
-import { IoSearchSharp } from "react-icons/io5";
 import useLogout from "../../../hooks/useLogout";
 import { BiLogOut } from "react-icons/bi";
 
@@ -98,18 +96,6 @@ export const NoChatSelected = () => {
       <div className="fixed  bottom-0 right-0 left-0 bg-teal-200 opacity-30 h-12 md:hidden flex justify-evenly items-center">
         <div onClick={() => navigate("/sidebar")}>
           <TiMessages
-            size={30}
-            className="font-extrabold text-slate-950 hover:text-slate-600"
-          />
-        </div>
-        <div>
-          <IoSearchSharp
-            size={30}
-            className="font-extrabold text-slate-950 hover:text-slate-600"
-          />
-        </div>
-        <div>
-          <CgProfile
             size={30}
             className="font-extrabold text-slate-950 hover:text-slate-600"
           />
